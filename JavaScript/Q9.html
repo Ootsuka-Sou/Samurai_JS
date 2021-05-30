@@ -1,0 +1,59 @@
+<! DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>演習問題９</title>
+    </head>
+    <body>
+        <form name="myForm">
+            <label>名前：</label>
+            <input type="text" name="name"><br />
+            
+            <label>メールアドレス</label>
+            <input type="text" name="mail"><br />
+            
+            <label>年齢：</label>
+            <input type="radio" name="age" value="20">20代
+            <input type="radio" name="age" value="30">30代
+            <input type="radio" name="age" value="40">40代
+            <input type="radio" name="age" value="50">50代<br />
+            
+            <br>
+            <label>普段使っているスマホは？</label><br />
+            <input type="checkbox" name="cell" value="iphone">iPhone
+            <input type="checkbox" name="cell" value="android">Android
+            <input type="checkbox" name="cell" value="galapagos">ガラケー
+            <input type="checkbox" name="cell" value="other">その他
+        </form>
+        
+        <button id="btn">実行</button>
+        
+        <script>
+            
+            const btn = document.getElementById('btn');
+            const age = document.forms.myForm;
+            const cell = document.forms.myForm;
+            
+            btn.addEventListener('click', () => {
+                const name = document.forms.myForm.name.value;
+                console.log(name);
+                
+                const mail = document.forms.myForm.mail.value;
+                console.log(mail);
+                
+                const age = document.forms.myForm;
+                console.log(age.age.value);
+                
+                const cell = document.forms.myForm;
+                cell.cell.forEach(item => {
+                    if(item.checked) 
+                        console.log(item.value);
+                })
+                    
+                
+            });
+            
+            
+        </script>
+    </body>
+</html>
